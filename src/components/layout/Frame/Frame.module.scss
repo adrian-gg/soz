@@ -1,0 +1,15 @@
+@import "../../../sass/mixins";
+
+/* -- Frame -- */
+.frame {
+  @include size(100%, 100dvh);
+  @include display-flex($ai: null);
+}
+
+.frame-box {
+  aspect-ratio: var(--aspect-ratio);
+  position: relative;
+
+  @include max-size(100%);
+  @include display-flex;
+}

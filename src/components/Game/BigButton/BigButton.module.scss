@@ -1,0 +1,88 @@
+@import "../../../sass/mixins";
+
+.big-button {
+  position: absolute;
+  will-change: width, height;
+
+  @include size(5.8rem);
+  @include display-flex;
+}
+
+.big-button > button {
+  border-radius: 100%;
+  background-color: var(--color-player);
+  color: var(--c-secondary);
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1ch;
+  transition: letter-spacing 0.2s, background-color 0.4s, color 0.4s;
+  cursor: pointer;
+
+  @include size(100%);
+}
+
+.big-button > button:hover,
+.big-button > button:focus-visible {
+  letter-spacing: 0.3ch;
+}
+
+.big-button > button.button--disabled {
+  pointer-events: none;
+  cursor: initial;
+}
+
+.big-button > button.button-start.button--disabled,
+.big-button > button.button-reset.button--disabled {
+  color: transparent;
+}
+
+/* == STATES ======================================================== */
+
+.resetting.big-button {
+  animation: black-hole-size 1.6s ease-out 0.4s forwards;
+}
+.resetting.big-button::before {
+  content: "";
+  background-image: radial-gradient(
+    closest-side,
+    rgba(var(--bgc-secondary-rgb), 1) 0%,
+    rgba(var(--bgc-secondary-rgb), 1) 70%,
+    rgba(var(--bgc-secondary-rgb), 0) 100%
+  );
+  animation: black-hole-color 1.6s ease-out 0.4s forwards;
+  will-change: background-image;
+
+  @include size(100%);
+  @include position(absolute, $t: 0, $l: 0);
+}
+.resetting.big-button > button.button-reset {
+  position: absolute;
+
+  @include size(5.8rem);
+}
+
+@keyframes black-hole-size {
+  25%,
+  75% {
+    @include size(12rem);
+  }
+}
+@keyframes black-hole-color {
+  25%,
+  75% {
+    background-image: radial-gradient(
+      closest-side,
+      rgba(var(--bgc-secondary-rgb), 1) 0%,
+      rgba(var(--bgc-secondary-rgb), 1) 70%,
+      rgba(var(--bgc-secondary-rgb), 0) 100%
+    );
+  }
+}
+
+@media screen and (orientation: portrait) {
+  .player-P2.big-button button.button-ready,
+  .playing-P2.big-button button.button-ready {
+    transform: rotate(180deg);
+  }
+}

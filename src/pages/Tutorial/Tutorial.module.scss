@@ -1,0 +1,47 @@
+@import "../../sass/mixins";
+
+/* -- GRID ---------------------------------------------------------- */
+
+.tutorial .grid {
+  aspect-ratio: 1 / 1;
+  height: 114.8rem;
+  mask-image: radial-gradient(closest-side, black, transparent);
+  -webkit-mask-image: radial-gradient(closest-side, black, transparent);
+  will-change: transform;
+  animation: grid-rotation 120s linear infinite;
+
+  @include bg-image("../../assets/grid.svg", $s: 100%);
+  @include position(absolute, $z: 0);
+}
+
+.tutorial .slider-container {
+  border: 0.2rem solid var(--bd-secondary);
+  border-radius: 100%;
+  background-color: var(--bgc-primary);
+  overflow: hidden;
+
+  @include size(30.2rem);
+  @include display-flex;
+  @include position($z: 0);
+}
+
+.tutorial .button {
+  padding: 0.4rem 1.6rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2ch;
+  transition: letter-spacing 0.2s;
+  text-shadow: 0 0 0.4rem var(--bgc-primary), 0 0 0.8rem var(--bgc-primary),
+    0 0 1rem var(--bgc-primary);
+  cursor: pointer;
+}
+
+.tutorial .button:hover,
+.tutorial .button:focus-visible {
+  font-weight: 600;
+  letter-spacing: 0.4ch;
+}
+
+.tutorial .button-back {
+  @include position(absolute, $b: 12.5%);
+}

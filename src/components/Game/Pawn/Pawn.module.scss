@@ -1,0 +1,18 @@
+@import "../../../sass/mixins";
+
+.pawn {
+  border-radius: 100%;
+  background-color: var(--bgc-secondary);
+}
+
+.pawn,
+.pawn > svg {
+  @include size(100%);
+}
+
+.pawn.P1 {
+  background-color: var(--color-P1);
+}
+.pawn.P2 {
+  background-color: var(--color-P2);
+}

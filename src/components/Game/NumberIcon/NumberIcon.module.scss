@@ -1,0 +1,40 @@
+@import "../../../sass/mixins";
+
+.number-container {
+  @include size(100%);
+  @include display-flex;
+}
+
+.number-box {
+  padding: 0.3rem;
+  border-radius: 360px;
+  background-color: var(--bgc-secondary);
+}
+
+.number-frame {
+  padding: 0.2rem;
+  border: 0.1rem solid var(--bd-tertiary);
+  border-radius: 360px;
+
+  @include display-flex($fd: column);
+  @include position($z: 0);
+}
+
+.number-frame::before {
+  content: "";
+  border-radius: 360px;
+  background-color: var(--bgc-primary);
+
+  @include size(0.35rem);
+  @include position(absolute, $t: -0.175rem);
+}
+
+.number {
+  @include size(2rem);
+}
+
+.number svg {
+  aspect-ratio: 1/1;
+
+  @include size(100%, auto);
+}

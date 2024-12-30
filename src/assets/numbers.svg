@@ -1,0 +1,106 @@
+<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="number-base" width="20" height="20" viewBox="0 0 20 20">
+    <path d="M10.0065 20.0021C8.02861 20.0025 6.095 19.4164 4.45023 18.3178C2.80547 17.2192 1.52341 15.6576 0.766211 13.8304C0.00901242 12.0032 -0.189326 9.99242 0.196288 8.05248C0.581903 6.11253 1.53415 4.33051 2.93259 2.93177C4.33103 1.53304 6.11286 0.580402 8.05272 0.194379C9.99259 -0.191644 12.0034 0.00627475 13.8307 0.763089C15.6581 1.5199 17.22 2.80161 18.3189 4.44615C19.4179 6.09068 20.0044 8.02419 20.0044 10.0021C20.0044 12.6539 18.9511 15.1971 17.0762 17.0724C15.2013 18.9477 12.6583 20.0015 10.0065 20.0021Z" fill="none"/>
+  </symbol>
+
+  <symbol id="number-point" width="20" height="20" viewBox="0 0 20 20">
+    <path d="M9.94316 8.21985C10.2941 8.21945 10.6373 8.32317 10.9293 8.51786C11.2213 8.71255 11.449 8.98948 11.5836 9.31361C11.7182 9.63774 11.7536 9.99448 11.6854 10.3387C11.6171 10.683 11.4484 10.9993 11.2003 11.2476C10.9523 11.4959 10.6362 11.6651 10.292 11.7337C9.94784 11.8023 9.59103 11.7673 9.26675 11.6331C8.94247 11.4989 8.66529 11.2715 8.47027 10.9797C8.27524 10.6879 8.17114 10.3449 8.17114 9.99393C8.17114 9.52377 8.35778 9.07279 8.69004 8.74015C9.0223 8.40752 9.47301 8.22039 9.94316 8.21985Z" fill="#EAE5E1"/>
+  </symbol>
+
+  <symbol id="number-line-lg" width="20" height="20" viewBox="0 0 20 20">
+    <path d="M16.9345 7.11476C17.5037 8.49886 17.6498 10.0207 17.3541 11.4878C17.0585 12.9549 16.3344 14.3014 15.2735 15.357C14.2126 16.4126 12.8626 17.1299 11.394 17.4182C9.92544 17.7065 8.40437 17.5528 7.02313 16.9767C5.64189 16.4005 4.46251 15.4277 3.63416 14.1812C2.80581 12.9348 2.36567 11.4707 2.36941 9.97408C2.37315 8.47749 2.82061 7.01559 3.65518 5.7733C4.48975 4.53101 5.67396 3.56414 7.05806 2.99487C7.97668 2.61359 8.96163 2.41776 9.95624 2.41864C10.9508 2.41953 11.9355 2.61708 12.8534 2.99999C13.7713 3.38291 14.6045 3.94358 15.3049 4.64976C16.0053 5.35593 16.5591 6.1937 16.9345 7.11476Z" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+  </symbol>
+  <symbol id="number-line-sm" width="20" height="20" viewBox="0 0 20 20">
+    <path d="M13.7908 10C13.7888 10.7613 13.5611 11.5048 13.1365 12.1367C12.7119 12.7686 12.1094 13.2604 11.4053 13.5499C10.7012 13.8394 9.92709 13.9135 9.18082 13.7631C8.43456 13.6126 7.74967 13.2442 7.21278 12.7045C6.67588 12.1648 6.31109 11.4779 6.16453 10.7309C6.01797 9.98384 6.09623 9.2101 6.38941 8.50753C6.68258 7.80496 7.17751 7.20512 7.8116 6.78383C8.4457 6.36255 9.19047 6.13876 9.95175 6.14076C10.4576 6.14075 10.9585 6.2407 11.4256 6.43489C11.8927 6.62908 12.3168 6.91369 12.6735 7.27232C13.0303 7.63095 13.3126 8.05657 13.5044 8.52468C13.6961 8.99278 13.7934 9.49416 13.7908 10Z" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+  </symbol>
+
+  <symbol id="number-0" width="20" height="20" viewBox="0 0 20 20">
+    <use href="#number-base"/>
+    <use href="#number-line-lg"/>
+    <use href="#number-point"/>
+  </symbol>
+
+  <symbol id="number-1" width="20" height="20" viewBox="0 0 20 20">
+    <use href="#number-base"/>
+    <path d="M9.94141 2.42297V6.14077" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <use href="#number-line-sm"/>
+    <use href="#number-point"/>
+  </symbol>
+
+  <symbol id="number-2" width="20" height="20" viewBox="0 0 20 20">
+    <use href="#number-base"/>
+    <path d="M6.09255 10.002H2.37476" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M17.4541 10.002H13.7363" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <use href="#number-line-lg"/>
+    <use href="#number-point"/>
+  </symbol>
+
+  <symbol id="number-3" width="20" height="20" viewBox="0 0 20 20">
+    <use href="#number-base"/>
+    <path d="M9.94141 2.42297V6.14077" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M3.38696 13.7824L6.60569 11.9235" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M16.5022 13.7784L13.2834 11.9195" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <use href="#number-line-sm"/>
+    <use href="#number-point"/>
+  </symbol>
+
+  <symbol id="number-4" width="20" height="20" viewBox="0 0 20 20">
+    <use href="#number-base"/>
+    <path d="M4.59155 4.64355L7.22027 7.27228" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M4.59326 15.3484L7.22198 12.7197" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M15.2999 15.3464L12.6711 12.7177" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M15.2979 4.63751L12.6692 7.26623" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <use href="#number-line-lg"/>
+    <use href="#number-point"/>
+  </symbol>
+
+  <symbol id="number-5" width="20" height="20" viewBox="0 0 20 20">
+    <use href="#number-base"/>
+    <path d="M9.94116 2.42297V6.14077" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M2.74219 7.65619L6.27814 8.80386" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M5.49414 16.1183L7.68037 13.1117" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M14.3927 16.1182L12.2085 13.1096" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M17.1421 7.65417L13.6062 8.80184" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <use href="#number-line-sm"/>
+    <use href="#number-point"/>
+  </symbol>
+
+  <symbol id="number-6" width="20" height="20" viewBox="0 0 20 20">
+    <use href="#number-base"/>
+    <path d="M6.15308 3.43933L8.01197 6.66007" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M2.36865 9.99603H6.08645" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M6.15527 16.5526L8.01417 13.3319" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M13.7261 16.5506L11.8672 13.3319" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M17.5108 9.99396H13.793" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M13.7239 3.43738L11.865 6.65812" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <use href="#number-line-lg"/>
+    <use href="#number-point"/>
+  </symbol>
+
+  <symbol id="number-7" width="20" height="20" viewBox="0 0 20 20">
+    <use href="#number-base"/>
+    <path d="M9.94165 2.42291V6.14071" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M4.02319 5.27588L6.92873 7.59142" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M2.56445 11.681L6.18728 10.8546" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M6.66187 16.8153L8.27426 13.4693" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M13.231 16.8132L11.6206 13.4672" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M17.3244 11.677L13.7036 10.8486" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M15.8618 5.27393L12.9563 7.58745" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <use href="#number-line-sm"/>
+    <use href="#number-point"/>
+  </symbol>
+
+  <symbol id="number-8" width="20" height="20" viewBox="0 0 20 20">
+    <use href="#number-base"/>
+    <path d="M7.04004 3.00092L8.4625 6.43583" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M2.94409 7.09863L6.37901 8.52311" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M2.94409 12.8954L6.38103 11.4709" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M7.0437 16.9932L8.46818 13.5562" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M12.839 16.9911L11.4165 13.5541" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M16.9345 12.8894L13.4976 11.467" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M16.9328 7.09454L13.4958 8.517" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <path d="M12.8349 2.9989L11.4104 6.43786" stroke="#EAE5E1" stroke-width="1" stroke-miterlimit="10"/>
+    <use href="#number-line-lg"/>
+    <use href="#number-point"/>
+  </symbol>
+</svg>

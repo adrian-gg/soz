@@ -1,0 +1,57 @@
+@import "../../../sass/mixins";
+
+/* -- Noise -- */
+.noise {
+  background-image: url("/img/noise.png");
+  pointer-events: none;
+  opacity: 0.15;
+  -webkit-animation: noise 5s steps(5) infinite;
+  animation: noise 5s steps(5) infinite;
+
+  @include size(600%);
+  @include position(fixed, $t: -300%, $l: -150%, $z: 9999);
+}
+
+@keyframes noise {
+  0%,
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  10% {
+    -webkit-transform: translate(-5%, -10%);
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    -webkit-transform: translate(-15%, 5%);
+    transform: translate(-15%, 5%);
+  }
+  30% {
+    -webkit-transform: translate(7%, -25%);
+    transform: translate(7%, -25%);
+  }
+  40% {
+    -webkit-transform: translate(-5%, 25%);
+    transform: translate(-5%, 25%);
+  }
+  50% {
+    -webkit-transform: translate(-15%, 10%);
+    transform: translate(-15%, 10%);
+  }
+  60% {
+    -webkit-transform: translate(4%);
+    transform: translate(4%);
+  }
+  70% {
+    -webkit-transform: translateY(30%);
+    transform: translateY(30%);
+  }
+  80% {
+    -webkit-transform: translate(6%, 40%);
+    transform: translate(6%, 40%);
+  }
+  90% {
+    -webkit-transform: translate(-9%, 15%);
+    transform: translate(-9%, 15%);
+  }
+}

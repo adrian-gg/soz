@@ -1,0 +1,68 @@
+/*
+ * ===================================================================
+ * -- VARIABLES ------------------------------------------------------
+ * ===================================================================
+ */
+
+:root {
+  /* -- colors --*/
+  --white: #fff;
+  --grey-l20: #eae5e1;
+  --grey-l10: #bdb9b7;
+  --grey-d10: #2f2e2d;
+  --black: #000;
+  --orange: #e9664c;
+  --purple: #615de5;
+  --green: #6abf4b;
+  --red: #e34a4d;
+  --blue: #51b4de;
+  --pink: #e369ce;
+
+  --white-rgb: 255, 255, 255;
+  --grey-l20-rgb: 234, 229, 225;
+  --grey-l10-rgb: 189, 185, 183;
+  --grey-d10-rgb: 47, 46, 45;
+  --black-rgb: 0, 0, 0;
+  --orange-rgb: 233, 102, 76;
+  --purple-rgb: 97, 93, 229;
+  --green-rgb: 106, 191, 75;
+  --red-rgb: 227, 74, 77;
+  --blue-rgb: 81, 180, 222;
+  --pink-rgb: 227, 105, 207;
+
+  --bgc-primary: var(--grey-l20);
+  --bgc-secondary: var(--grey-d10);
+  --bgc-tertiary: var(--grey-l10);
+  --bd-primary: var(--grey-l10);
+  --bd-secondary: var(--grey-d10);
+  --bd-tertiary: var(--grey-l20);
+  --c-primary: var(--grey-d10);
+  --c-secondary: var(--grey-l20);
+  --c-tertiary: var(--grey-l10);
+  --color-P1: var(--purple);
+  --color-P2: var(--orange);
+
+  --bgc-primary-rgb: var(--grey-l20-rgb);
+  --bgc-secondary-rgb: var(--grey-d10-rgb);
+  --bgc-tertiary-rgb: var(--grey-l10-rgb);
+  --bd-primary-rgb: var(--grey-l10-rgb);
+  --bd-secondary-rgb: var(--grey-d10-rgb);
+  --bd-tertiary-rgb: var(--grey-l20-rgb);
+  --c-primary-rgb: var(--grey-d10-rgb);
+  --c-secondary-rgb: var(--grey-l20-rgb);
+  --c-tertiary-rgb: var(--grey-l10-rgb);
+  --color-P1-rgb: var(--purple-rgb);
+  --color-P2-rgb: var(--orange-rgb);
+
+  /* -- sizes --*/
+  --aspect-ratio: 9 / 16; /* 0,5625 */
+  --size-base: 318;
+  --size-base-horizontal: calc(
+    ((10 * 100) / (var(--size-base) / calc(var(--aspect-ratio)))) * 1dvh
+  ); /* <-- Equivalent to 10px on a w565.33x screen.*/
+  --size-base-vertical: calc(
+    ((10 * 100) / var(--size-base)) * 1vw
+  ); /* <-- Equivalent to 10px on a w318px screen. */
+
+  -webkit-tap-highlight-color: transparent;
+}

@@ -1,0 +1,72 @@
+@import "../../../sass/mixins";
+
+.drawers {
+  position: relative;
+
+  @include size(30.2rem);
+  @include display-flex;
+}
+
+.drawer {
+  padding-top: 4rem;
+  position: absolute;
+  will-change: top, bottom;
+
+  @include size(8.7rem, 12.9rem);
+  @include bg-image("../../../assets/drawer.svg");
+}
+
+.drawer-top,
+.drawer-top .number-container {
+  transform: rotate(180deg);
+}
+
+@media screen and (orientation: portrait) {
+  .drawer-top .number-container {
+    transform: rotate(0deg);
+  }
+}
+
+.drawer-top {
+  top: 0;
+}
+
+.drawer-bot {
+  bottom: 0;
+}
+
+.drawers-result .drawer-top,
+.drawers-result .drawer-bot {
+  transition: top 0.2s ease-in-out 1.6s, bottom 0.2s ease-in-out 1.6s;
+}
+
+.drawers-result .drawer-top {
+  top: -8.5rem;
+}
+
+.drawers-result .drawer-bot {
+  bottom: -8.5rem;
+}
+
+.drawer.drawer-P1 > div > div {
+  background-color: var(--color-P1);
+}
+
+.drawer.drawer-P2 > div > div {
+  background-color: var(--color-P2);
+}
+
+/* == STATES ======================================================== */
+
+.resetting.drawers-result .drawer-top,
+.resetting.drawers-result .drawer-bot {
+  transition: top 0.2s ease-in-out, bottom 0.2s ease-in-out;
+}
+
+.resetting.drawers-result .drawer-top {
+  top: 0rem;
+}
+
+.resetting.drawers-result .drawer-bot {
+  bottom: 0rem;
+}

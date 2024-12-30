@@ -1,0 +1,48 @@
+@import "./sass/mixins";
+
+#App {
+  transform-style: preserve-3d;
+  perspective: 100rem;
+}
+
+.page {
+  overflow: hidden;
+
+  @include size(100%);
+  @include position(absolute, $t: 0, $l: 0);
+}
+
+/*
+ * ===================================================================
+ * -- GLOBAL STYLES --------------------------------------------------
+ * ===================================================================
+ */
+
+@media (min-aspect-ratio: 9/16) {
+  html {
+    font-size: var(--size-base-horizontal);
+  }
+}
+@media (max-aspect-ratio: 9/16) {
+  html {
+    font-size: var(--size-base-vertical);
+  }
+}
+
+body {
+  background-color: var(--bgc-primary);
+  color: var(--c-primary);
+
+  @include size(100%, 100dvh);
+}
+
+#root {
+  @include size(100%);
+}
+
+img {
+  object-fit: contain;
+  object-position: center;
+
+  @include size(100%);
+}

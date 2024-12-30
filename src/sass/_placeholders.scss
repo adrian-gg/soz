@@ -1,0 +1,38 @@
+@import "../sass/mixins";
+/*
+ * ===================================================================
+ * -- PLACEHOLDERS ---------------------------------------------------
+ * ===================================================================
+ */
+
+/* -- GRID ---------------------------------------------------------- */
+
+%grid {
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  will-change: transform;
+
+  @include bg-image("../../assets/grid.svg", $s: 100%);
+}
+
+%grid-animated {
+  animation: grid-rotation 120s linear infinite;
+}
+
+@keyframes grid-rotation {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* -- COLOR PLAYERS ------------------------------------------------- */
+
+%color-player1 {
+  --color-player: var(--color-P1);
+  --color-player-rgb: var(--color-P1-rgb);
+}
+
+%color-player2 {
+  --color-player: var(--color-P2);
+  --color-player-rgb: var(--color-P2-rgb);
+}

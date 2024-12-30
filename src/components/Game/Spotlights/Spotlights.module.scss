@@ -1,0 +1,110 @@
+@import "../../../sass/mixins";
+
+.spotlights {
+  @include size(100%);
+  @include display-flex;
+  @include position(absolute, $z: -1);
+}
+
+.spotlights::before {
+  content: "";
+  border-radius: 100%;
+  background-color: var(--bgc-primary);
+
+  @include size(8.6rem);
+}
+
+.spotlight {
+  --color-winner: var(--bgc-primary-rgb);
+  border-radius: 100%;
+  background-image: radial-gradient(
+    closest-side,
+    rgba(var(--bgc-secondary-rgb), 0.4) 40%,
+    rgba(var(--bgc-secondary-rgb), 0) 100%
+  );
+  mask-image: conic-gradient(black 45deg, transparent 45deg);
+  -webkit-mask-image: conic-gradient(black 45deg, transparent 45deg);
+  opacity: 0;
+  will-change: opacity;
+
+  @include size(25rem);
+  @include position(absolute, $z: -1);
+}
+
+.spotlight-P1 {
+  background-image: radial-gradient(
+    closest-side,
+    rgba(var(--color-P1-rgb), 0.4) 40%,
+    rgba(var(--color-P1-rgb), 0) 100%
+  );
+}
+
+.spotlight-P2 {
+  background-image: radial-gradient(
+    closest-side,
+    rgba(var(--color-P2-rgb), 0.4) 40%,
+    rgba(var(--color-P2-rgb), 0) 100%
+  );
+}
+
+.spotlight-winner {
+  --color-winner: var(--bgc-secondary-rgb);
+  background-color: var(--bgc-primary);
+  background-image: radial-gradient(
+    closest-side,
+    rgba(var(--color-winner), 0.6) 40%,
+    rgba(var(--color-winner), 0) 100%
+  );
+  mask-image: none;
+  -webkit-mask-image: none;
+  animation: spotlight-winner 5s ease-in-out 1.6s infinite;
+}
+
+.spotlight-winner-P1 {
+  --color-winner: var(--color-P1-rgb);
+}
+
+.spotlight-winner-P2 {
+  --color-winner: var(--color-P2-rgb);
+}
+
+@mixin spotlight($total) {
+  @for $i from 1 through $total {
+    .spotlight-#{$i} {
+      transform: rotate(calc((45 * (#{$i} - 1)) * 1deg));
+      animation: spotlight
+        0.2s
+        ease-in-out
+        calc((0.2 * (#{$i} - 1)) * 1s)
+        forwards;
+    }
+  }
+}
+
+@include spotlight(8);
+
+@keyframes spotlight {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spotlight-winner {
+  20% {
+    opacity: 0;
+  }
+  45%,
+  55% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+}
+
+/* == STATES ======================================================== */
+
+.resetting.spotlights {
+  transition: opacity 1s;
+  opacity: 0;
+}

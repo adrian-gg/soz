@@ -1,0 +1,30 @@
+@import "../../../sass/mixins";
+
+.timer {
+  border-radius: 100%;
+  background-color: var(--color-player);
+  mask-image: conic-gradient(
+    black calc(var(--percent, 360) * 1deg),
+    transparent calc(var(--percent, 360) * 1deg)
+  );
+  -webkit-mask-image: conic-gradient(
+    black calc(var(--percent, 360) * 1deg),
+    transparent calc(var(--percent, 360) * 1deg)
+  );
+  position: absolute;
+  transition: background-color 0.4s, width 0.4s, height 0.4s;
+
+  @include size(6.8rem);
+  @include display-flex;
+}
+
+.percent-0 {
+  @include size(6rem);
+}
+
+.circle {
+  border-radius: 100%;
+  background-color: var(--bgc-primary);
+
+  @include size(6.2rem);
+}

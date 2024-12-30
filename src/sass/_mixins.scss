@@ -1,0 +1,103 @@
+/*
+ * ===================================================================
+ * -- MIXINS ---------------------------------------------------------
+ * ===================================================================
+ */
+
+/// Helper to size an element
+/// @param {Length | Strings} $width
+/// @param {Length | Strings} $height
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+/// Helper to min size an element
+/// @param {Length | Strings} $width
+/// @param {Length | Strings} $height
+@mixin min-size($width, $height: $width) {
+  min-width: $width;
+  min-height: $height;
+}
+
+/// Helper to max size an element
+/// @param {Length | Strings} $width
+/// @param {Length | Strings} $height
+@mixin max-size($width, $height: $width) {
+  max-width: $width;
+  max-height: $height;
+}
+
+/// Helper to apply flexbox properties to an element
+/// @param {String | null} $d - display
+/// @param {String | null} $fd - flex-direction
+/// @param {String | null} $jc - justify-content
+/// @param {String | null} $ai - align-items
+/// @param {String | null} $g - gap
+@mixin display-flex($d: flex, $fd: null, $jc: center, $ai: center, $g: null) {
+  display: $d;
+  @if $fd {
+    flex-direction: $fd;
+  }
+  @if $jc {
+    justify-content: $jc;
+  }
+  @if $ai {
+    align-items: $ai;
+  }
+  @if $g {
+    gap: $g;
+  }
+}
+
+/// Helper to apply a background image with custom properties
+/// @param {String | null} $i - image
+/// @param {String | null} $r - repeat
+/// @param {String | null} $s - size
+/// @param {String | null} $p - position
+@mixin bg-image($i, $r: no-repeat, $s: contain, $p: center) {
+  background-image: url($i);
+  @if $r {
+    background-repeat: $r;
+  }
+  @if $s {
+    background-size: $s;
+  }
+  @if $p {
+    background-position: $p;
+  }
+}
+
+/// Helper to apply position properties
+/// @param {String} $p - position
+/// @param {Length | null} $t - top
+/// @param {Length | null} $r - right
+/// @param {Length | null} $b - bottom
+/// @param {Length | null} $l - left
+/// @param {Number | null} $z - z-index
+@mixin position(
+  $p: relative,
+  $t: null,
+  $r: null,
+  $b: null,
+  $l: null,
+  $z: null
+) {
+  position: $p;
+
+  @if $t {
+    top: $t;
+  }
+  @if $r {
+    right: $r;
+  }
+  @if $b {
+    bottom: $b;
+  }
+  @if $l {
+    left: $l;
+  }
+  @if $z {
+    z-index: $z;
+  }
+}

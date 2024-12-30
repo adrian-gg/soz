@@ -1,0 +1,87 @@
+@import "../../../sass/mixins";
+
+.tiles {
+  @include size(100%);
+  @include display-flex;
+  @include position(absolute, $t: 0, $l: 0);
+}
+
+.tile-container {
+  transform-origin: center bottom;
+  will-change: padding-top;
+
+  @include size(2.8rem, 50%);
+  @include position(absolute, $t: 0);
+}
+
+.tile-container .tile {
+  animation: tile_glowing 3s linear infinite;
+}
+
+.tile-out {
+  padding-top: 3.5rem;
+}
+
+.tile-in {
+  padding-top: 6.7rem;
+}
+
+.tile {
+  border-radius: 100%;
+  transition: background-color 0.2s;
+
+  @include size(2.8rem);
+}
+
+.tile--available {
+  cursor: pointer;
+}
+
+.tile--available:hover {
+  background-color: rgba(var(--color-player-rgb), 0.4);
+}
+
+@keyframes tile_glowing {
+  0% {
+    background-color: rgba(var(--color-player-rgb), 0);
+  }
+  50% {
+    background-color: rgba(var(--color-player-rgb), 0.2);
+  }
+  100% {
+    background-color: rgba(var(--color-player-rgb), 0);
+  }
+}
+
+// Mixin for rotation of the first 8 tiles
+@mixin rotate-tiles($count: 8, $angle: 45deg) {
+  @for $i from 0 through $count - 1 {
+    .tile-#{$i} {
+      transform: rotate(calc(#{$angle} * #{$i}));
+    }
+  }
+}
+
+// Mixin for the rotation of the following 8 tiles with an additional offset
+@mixin rotate-offset-tiles($count: 8, $angle: 45deg, $offset: 22.5deg) {
+  @for $i from 0 through $count - 1 {
+    .tile-#{ $i + $count } {
+      transform: rotate(calc(#{$angle} * #{$i} + #{$offset}));
+    }
+  }
+}
+
+@include rotate-tiles(8, 45deg);
+@include rotate-offset-tiles(8, 45deg, 22.5deg);
+
+/* == STATES ======================================================== */
+
+.resetting.tiles .tile-out {
+  transition: padding-top 0.7s ease-in-out 0.9s;
+  padding-top: 13.5rem;
+}
+
+.resetting.tiles .tile-in {
+  transition: padding-top 0.8s ease-in-out 0.8s;
+  padding-top: 13.5rem;
+}

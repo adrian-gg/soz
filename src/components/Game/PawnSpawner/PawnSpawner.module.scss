@@ -1,0 +1,159 @@
+@import "../../../sass/mixins";
+@import "../../../sass/placeholders";
+
+.spawner-container.playing-P1 {
+  @extend %color-player1;
+}
+
+.spawner-container.playing-P2 {
+  @extend %color-player2;
+}
+
+.spawner-container {
+  --color-player: var(--bgc-secondary);
+  height: 50%;
+  padding-top: 2.14rem;
+  transform-origin: center bottom;
+  will-change: transform;
+  transform: rotate(90deg);
+
+  @include position(absolute, $t: 0);
+}
+
+.spawner {
+  position: relative;
+
+  @include display-flex;
+}
+
+.spawner::before,
+.spawner::after {
+  content: "";
+  border-radius: 100%;
+  background-color: var(--bgc-secondary);
+  position: absolute;
+
+  @include size(0.6rem);
+}
+
+.spawner::before {
+  top: 0;
+  transform: translateY(-60%);
+}
+
+.spawner::after {
+  bottom: 0;
+  transform: translateY(60%);
+}
+
+.pawn-container {
+  aspect-ratio: 1/1;
+  width: 4.65rem;
+  position: relative;
+  transform: rotate(-18deg);
+  will-change: transform;
+
+  @include bg-image("../../../assets/spawner.svg");
+  @include display-flex;
+}
+
+.pawn-container::before {
+  content: "";
+  border-radius: 100%;
+  background-color: var(--bgc-secondary);
+  position: absolute;
+
+  @include size(2rem);
+}
+
+.pawn-container > div {
+  background-color: var(--color-player);
+  transform: rotate(18deg);
+  will-change: transform;
+  transition: background-color 0.4s;
+
+  @include size(3rem);
+}
+
+/* == STATES ======================================================== */
+
+.player-P1.playing-P1.spawner-mode--play {
+  --start-rotation: 90deg;
+  --end-rotation: 180deg;
+  animation: rolling_in 0.6s ease-out forwards;
+}
+
+.player-P2.playing-P2.spawner-mode--play {
+  --start-rotation: 270deg;
+  --end-rotation: 360deg;
+  animation: rolling_in 0.6s ease-out forwards;
+}
+
+.playing-P1.spawner-mode--play {
+  --start-rotation: 180deg;
+  --end-rotation: 270deg;
+  animation: rolling_out 0.6s ease-in forwards;
+}
+
+.playing-P2.spawner-mode--play {
+  --start-rotation: 360deg;
+  --end-rotation: 450deg;
+  animation: rolling_out 0.6s ease-in forwards;
+}
+
+@keyframes rolling_in {
+  from {
+    display: none;
+    transform: rotate(var(--start-rotation));
+  }
+  to {
+    transform: rotate(var(--end-rotation));
+  }
+}
+
+@keyframes rolling_out {
+  from {
+    transform: rotate(var(--start-rotation));
+  }
+  to {
+    display: none;
+    transform: rotate(var(--end-rotation));
+  }
+}
+
+.playing-P1 .pawn-container,
+.playing-P1 .pawn-container > div,
+.playing-P2 .pawn-container,
+.playing-P2 .pawn-container > div {
+  animation: open_pawn_container 0.6s ease-in-out 1s forwards;
+}
+
+@keyframes open_pawn_container {
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+.player-P1.spawner-mode--dice {
+  --end-rotation: 180deg;
+  animation: dice_rolling_in 3s cubic-bezier(0, 0.4, 0.4, 1.04) forwards,
+    dice_rolling_out 0.6s ease-in 4.2s forwards;
+}
+
+.player-P2.spawner-mode--dice {
+  --end-rotation: 0deg;
+  animation: dice_rolling_in 3s cubic-bezier(0, 0.4, 0.4, 1.04) forwards,
+    dice_rolling_out 0.6s ease-in 4.2s forwards;
+}
+
+@keyframes dice_rolling_in {
+  to {
+    transform: rotate(calc(var(--end-rotation) + (360deg * 8)));
+  }
+}
+
+@keyframes dice_rolling_out {
+  to {
+    transform: rotate(calc(var(--end-rotation) + (360deg * 8) + 90deg));
+  }
+}

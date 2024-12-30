@@ -1,0 +1,38 @@
+@import "../../sass/placeholders";
+
+#Home {
+  position: relative;
+}
+
+/* -- HOLE ---------------------------------------------------------- */
+
+.hole {
+  aspect-ratio: 1 / 1;
+  width: 19.6%;
+  border-radius: 100%;
+  box-shadow: 0 0 0 100vw var(--bgc-primary);
+
+  @include position(absolute, $z: 0);
+}
+
+/* -- GRID ---------------------------------------------------------- */
+
+.grid {
+  height: 114.8rem;
+  mask-image: radial-gradient(closest-side, black, transparent);
+  -webkit-mask-image: radial-gradient(closest-side, black, transparent);
+  z-index: 5;
+
+  @extend %grid;
+  @extend %grid-animated;
+}
+
+/* -- LOGO ---------------------------------------------------------- */
+
+.logo {
+  width: 100%;
+  padding: 0 10%;
+  display: flex;
+
+  @include position(absolute, $z: 10);
+}
